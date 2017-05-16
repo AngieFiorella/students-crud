@@ -1,7 +1,26 @@
+body {
+  font-family: 'Oswald', sans-serif; }
+
 .invisible {
   display: none; }
 
 .visible {
   display: block; }
+
+.container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.edit {
+  background-color: #15C671; }
+
+.remove {
+  background-color: #FF4747; }
+
+button {
+  border: none;
+  border-radius: 5%; }
 
 /*# sourceMappingURL=styles.css.map */

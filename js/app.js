@@ -31,7 +31,7 @@ app.controller('myController', function($scope){
   {
     name : '',
     lastname : '',
-    age : 0
+    age : null
   }];
   $scope.deleteStudent = function(x){
     var indexStudent = $scope.students.indexOf(x);
@@ -40,6 +40,11 @@ app.controller('myController', function($scope){
   }
   $scope.addStudent = function(){
     document.getElementById("js-form").className="visible";
+    $scope.studentsToAdd.push({
+      name : '',
+      lastname : '',
+      age : null
+    })
   }
   $scope.submitNewStudent= function(x){
     var index = $scope.studentsToAdd.indexOf(x);
