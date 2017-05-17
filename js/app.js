@@ -33,6 +33,12 @@ app.controller('myController', function($scope){
     lastname : '',
     age : null
   }];
+  $scope.studentToEdit = [
+  {
+    name : '',
+    lastname : '',
+    age : null
+  }];
   $scope.deleteStudent = function(x){
     var indexStudent = $scope.students.indexOf(x);
     $scope.students.splice(indexStudent, 1);
@@ -40,17 +46,30 @@ app.controller('myController', function($scope){
   }
   $scope.addStudent = function(){
     document.getElementById("js-form").className="visible";
-    $scope.studentsToAdd.push({
+    $scope.studentsToAdd.push(
+    {
       name : '',
       lastname : '',
       age : null
-    })
+    }
+    )
   }
   $scope.submitNewStudent= function(x){
     var index = $scope.studentsToAdd.indexOf(x);
     $scope.studentsToAdd.splice(index, 1);
     $scope.studentsToAdd.push(angular.copy(x));
     $scope.students.push(x);
+  }
+  $scope.updateStudent = function(x){
+    document.getElementById("js-update").className="visible";
+    /*$scope.studentToEdit.name = $scope.x.name;
+    $scope.studentToEdit.lastname = $scope.x.lastname;
+    $scope.studentToEdit.age = $scope.x.age;*/
+    $scope.studentsToAdd.push({
+      name : '',
+      lastname : '',
+      age : null
+    })
   }
 });
 

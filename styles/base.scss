@@ -23,3 +23,25 @@ button {
   border: none;
   border-radius: 5%;
 }
+th {
+  color: $white;
+  margin: 0;
+  font-weight: 300;
+  padding: 5px 15px;
+  text-align: left;
+}
+.first-row {
+  background-color: $light-blue;
+}
+td {
+  padding: 5px 15px;
+}
+.search {
+  margin: 20px;
+  margin-left: 0;
+}
+.container-table {
+  box-shadow: 10px 17px 20px rgba($black, .25);
+  margin: 20px;
+  margin-left: 0;
+}

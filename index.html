@@ -11,27 +11,37 @@
 <body>
   <div class="container">
     <div class="container-list" ng-controller='myController'>
-      <table>
-        <tr>
-          <th>Name</th>
-          <th>Last Name</th>
-          <th>Age</th>
-          <th></th>
-          <th></th>
-        </tr>
-        <tr ng-repeat = "student in students">
-          <td>{{ student.name }}</td>
-          <td>{{ student.lastname }}</td>
-          <td>{{ student.age }}</td>
-          <td><button class="edit">EDIT</button></td>
-          <td><button ng-click="deleteStudent(student)" class="remove">DELETE</button></td>
-        </tr>
-      </table>
+      <input type="text" ng-model="name" class="search">
+      <div class="container-table">
+        <table cellspacing="0" cellpadding="0">
+          <tr class="first-row">
+            <th>Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+            <th></th>
+            <th></th>
+          </tr>
+          <tr ng-repeat = "student in students | filter: name">
+            <td>{{ student.name }}</td>
+            <td>{{ student.lastname }}</td>
+            <td>{{ student.age }}</td>
+            <td><button class="edit" ng-click="updateStudent(student)">EDIT</button></td>
+            <td><button ng-click="deleteStudent(student)" class="remove">DELETE</button></td>
+          </tr>
+        </table>
+        {{ student.name }}
+      </div>
+      <div id="js-update" class="invisible">
+        <input type="text"><br>
+        <input type="text"><br>
+        <input type="number"><br>
+        <button ng-click="submitEdit(x)">CONFIRM</button>
+      </div>
       <button ng-click="addStudent()">Add Student</button>
       <div id="js-form" class="invisible" ng-repeat= "x in studentsToAdd">
-        <input type="text" ng-model="x.name" ng-bind=""><br>
-        <input type="text" ng-model="x.lastname" ng-bind=""><br>
-        <input type="number" ng-model="x.age" ng-bind=""><br>
+        <input type="text" ng-model="x.name"><br>
+        <input type="text" ng-model="x.lastname"><br>
+        <input type="number" ng-model="x.age"><br>
         <button ng-click="submitNewStudent(x)">Submit</button>
       </div>
     </div>
