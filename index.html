@@ -29,10 +29,10 @@
       </table>
       <button ng-click="addStudent()">Add Student</button>
       <div id="js-form" class="invisible" ng-repeat= "x in studentsToAdd">
-        <!--label>Name: </label--><input type="text" ng-model="x.name"><br>
-        <!--label>Last Name:</label--><input type="text" ng-model="x.lastname"><br>
-        <!--label>Age: </label--><input type="number" ng-model="x.age">
-        <button ng-click="submitNewStudent(studentToAdd)">Submit</button>
+        <input type="text" ng-model="x.name" ng-bind=""><br>
+        <input type="text" ng-model="x.lastname" ng-bind=""><br>
+        <input type="number" ng-model="x.age" ng-bind=""><br>
+        <button ng-click="submitNewStudent(x)">Submit</button>
       </div>
     </div>
   </div>
